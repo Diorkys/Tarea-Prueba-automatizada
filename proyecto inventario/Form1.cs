@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cap_Entidades;
 using Cap_Negocio;
+<<<<<<< HEAD
 using System.Runtime.InteropServices;
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
 
 namespace proyecto_inventario
 {
@@ -54,12 +57,15 @@ namespace proyecto_inventario
             }
 
         }
+<<<<<<< HEAD
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
         public Form1()
         {
             InitializeComponent();
@@ -94,6 +100,7 @@ namespace proyecto_inventario
         {
 
         }
+<<<<<<< HEAD
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -170,5 +177,7 @@ namespace proyecto_inventario
                 txtContrasenia.UseSystemPasswordChar = false;
             }
         }
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
     }
 }

@@ -183,7 +183,10 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1254, 55);
             this.panel2.TabIndex = 0;
+<<<<<<< HEAD
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
             // 
             // label1
             // 
