@@ -86,5 +86,10 @@ namespace proyecto_inventario
             // Mostrar el formulario de productos
             formProveedores.ShowDialog();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
