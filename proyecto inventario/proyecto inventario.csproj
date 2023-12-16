@@ -206,5 +206,8 @@
   <ItemGroup>
     <None Include="Resources\VENTAS1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruzar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
