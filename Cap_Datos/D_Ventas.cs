@@ -16,6 +16,28 @@ namespace Cap_Datos
         private string connectionString = ConfigurationManager.ConnectionStrings["sql"].ConnectionString;
 
 
+        public DataTable ObtenerProductosMasVendidos()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT TOP 5 P.nombre AS Producto, SUM(V.cantidad) AS CantidadVendida " +
+                               "FROM Ventas V " +
+                               "JOIN productos P ON V.idproducto = P.idproducto " +
+                               "GROUP BY P.nombre " +
+                               "ORDER BY CantidadVendida DESC";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    return dataTable;
+                }
+            }
+        }
 
         public void InsertarVenta(int idCliente, int idProducto, int cantidad, DateTime fecha, int totalVenta, int precioDeVenta)
         {

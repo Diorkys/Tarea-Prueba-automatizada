@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Atributos\D_AtributosClientes.cs" />
     <Compile Include="E_AtributosProductos.cs" />
+    <Compile Include="E_AtributosProveedores.cs" />
     <Compile Include="E_AtributosVenta.cs" />
     <Compile Include="E_Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

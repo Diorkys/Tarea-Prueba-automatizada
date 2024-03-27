@@ -45,18 +45,17 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnVender = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnVender = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,6 +83,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -94,6 +94,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -239,73 +240,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(807, 266);
             this.dataGridView1.TabIndex = 43;
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAgregar.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(929, 362);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(290, 51);
-            this.btnAgregar.TabIndex = 44;
-            this.btnAgregar.Text = "AGREGAR";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnVender
-            // 
-            this.btnVender.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnVender.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.btnVender.ForeColor = System.Drawing.Color.White;
-            this.btnVender.Location = new System.Drawing.Point(929, 497);
-            this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(290, 51);
-            this.btnVender.TabIndex = 45;
-            this.btnVender.Text = "VENDER";
-            this.btnVender.UseVisualStyleBackColor = false;
-            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnEliminar.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(929, 431);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(290, 51);
-            this.btnEliminar.TabIndex = 46;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::proyecto_inventario.Properties.Resources.VENTAS1;
-            this.pictureBox3.Location = new System.Drawing.Point(929, 87);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(290, 239);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 47;
-            this.pictureBox3.TabStop = false;
-            // 
-            // txtPrecioVenta
-            // 
-            this.txtPrecioVenta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrecioVenta.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioVenta.Location = new System.Drawing.Point(503, 296);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(301, 19);
-            this.txtPrecioVenta.TabIndex = 48;
-            this.txtPrecioVenta.Text = "PRECIO DE VENTA";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(503, 321);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 2);
-            this.panel1.TabIndex = 49;
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Cliente";
@@ -348,6 +282,61 @@
             this.Column7.Name = "Column7";
             this.Column7.Width = 125;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAgregar.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(929, 429);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(290, 51);
+            this.btnAgregar.TabIndex = 44;
+            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnVender
+            // 
+            this.btnVender.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnVender.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.btnVender.ForeColor = System.Drawing.Color.White;
+            this.btnVender.Location = new System.Drawing.Point(929, 497);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(290, 51);
+            this.btnVender.TabIndex = 45;
+            this.btnVender.Text = "VENDER";
+            this.btnVender.UseVisualStyleBackColor = false;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::proyecto_inventario.Properties.Resources.VENTAS1;
+            this.pictureBox3.Location = new System.Drawing.Point(929, 87);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(290, 239);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 47;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txtPrecioVenta
+            // 
+            this.txtPrecioVenta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecioVenta.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioVenta.Location = new System.Drawing.Point(503, 296);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(301, 19);
+            this.txtPrecioVenta.TabIndex = 48;
+            this.txtPrecioVenta.Text = "PRECIO DE VENTA";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(503, 321);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(360, 2);
+            this.panel1.TabIndex = 49;
+            // 
             // ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -356,7 +345,6 @@
             this.Controls.Add(this.txtPrecioVenta);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
@@ -409,7 +397,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnVender;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.Panel panel1;

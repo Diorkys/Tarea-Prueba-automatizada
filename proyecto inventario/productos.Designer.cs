@@ -93,7 +93,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-3, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1161, 729);
+            this.panel1.Size = new System.Drawing.Size(1161, 720);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -305,6 +305,7 @@
             this.txtNombre.TabIndex = 8;
             this.txtNombre.Text = "NOMBRE";
             this.txtNombre.Click += new System.EventHandler(this.txtNombre_Click);
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // panel3
             // 
@@ -350,20 +351,25 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::proyecto_inventario.Properties.Resources.icons8_cerrar_ventana_384;
             this.pictureBox2.Location = new System.Drawing.Point(1104, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::proyecto_inventario.Properties.Resources.icons8_minimizar_la_ventana_240;
             this.pictureBox1.Location = new System.Drawing.Point(1058, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -385,6 +391,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "productos";
             this.Text = "productos";
+            this.Load += new System.EventHandler(this.productos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

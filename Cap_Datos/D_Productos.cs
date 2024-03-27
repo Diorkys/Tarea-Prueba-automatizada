@@ -11,10 +11,30 @@ using Cap_Entidades;
 namespace Cap_Datos
 {
     public class D_Productos
-    {
+    {   
         private string connectionString = ConfigurationManager.ConnectionStrings["sql"].ConnectionString;
 
         public SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
+
+
+        public DataTable ObtenerProductos()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT nombre, cantidad FROM productos";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    return dataTable;
+                }
+            }
+        }
 
 
 
