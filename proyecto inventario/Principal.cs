@@ -173,5 +173,13 @@ namespace proyecto_inventario
             this.Show();
 
         }
+<<<<<<< HEAD
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
     }
 }

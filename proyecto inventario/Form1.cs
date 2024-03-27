@@ -9,7 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cap_Entidades;
 using Cap_Negocio;
+<<<<<<< HEAD
 using System.Runtime.InteropServices;
+=======
+<<<<<<< HEAD
+using System.Runtime.InteropServices;
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
 
 namespace proyecto_inventario
 {
@@ -56,11 +63,21 @@ namespace proyecto_inventario
             }
 
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
         public Form1()
         {
             InitializeComponent();
@@ -98,6 +115,10 @@ namespace proyecto_inventario
         {
 
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -111,6 +132,25 @@ namespace proyecto_inventario
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+<<<<<<< HEAD
+=======
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "Usuario")
@@ -120,6 +160,19 @@ namespace proyecto_inventario
             }
         }
 
+<<<<<<< HEAD
+=======
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "")
@@ -135,6 +188,10 @@ namespace proyecto_inventario
             {
                 txtContrasenia.Text = "";
                 txtContrasenia.ForeColor = Color.Black;
+<<<<<<< HEAD
+=======
+                txtContrasenia.UseSystemPasswordChar = true;
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
             }
         }
 
@@ -144,7 +201,15 @@ namespace proyecto_inventario
             {
                 txtContrasenia.Text = "Contraseña";
                 txtContrasenia.ForeColor = Color.Black;
+<<<<<<< HEAD
             }
         }
+=======
+                txtContrasenia.UseSystemPasswordChar = false;
+            }
+        }
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
     }
 }

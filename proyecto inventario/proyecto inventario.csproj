@@ -232,6 +232,7 @@
   <ItemGroup>
     <None Include="Resources\VENTAS1.jpg" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="Resources\cerrar-sesion.png" />
     <None Include="Resources\reporte.png" />
@@ -244,5 +245,13 @@
     <Content Include="Resources\inventario.png" />
     <None Include="Resources\bienes1.png" />
   </ItemGroup>
+=======
+<<<<<<< HEAD
+  <ItemGroup>
+    <None Include="Resources\cruzar.png" />
+  </ItemGroup>
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
