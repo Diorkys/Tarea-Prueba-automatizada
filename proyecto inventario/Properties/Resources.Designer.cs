@@ -123,9 +123,22 @@ namespace proyecto_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap empleado_de_oficina {
             get {
                 object obj = ResourceManager.GetObject("empleado-de-oficina", resourceCulture);
+=======
+<<<<<<< HEAD
+        internal static System.Drawing.Bitmap empleado_de_oficina {
+            get {
+                object obj = ResourceManager.GetObject("empleado-de-oficina", resourceCulture);
+=======
+<<<<<<< HEAD
+        internal static System.Drawing.Bitmap cruzar {
+            get {
+                object obj = ResourceManager.GetObject("cruzar", resourceCulture);
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
+>>>>>>> 027efc638981e1ec8e18dc59b93610a278334976
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +146,14 @@ namespace proyecto_inventario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
+>>>>>>> 79c1289cff3484e80f768754518989d51caba8ff
+>>>>>>> 027efc638981e1ec8e18dc59b93610a278334976
         internal static System.Drawing.Bitmap empleados {
             get {
                 object obj = ResourceManager.GetObject("empleados", resourceCulture);
