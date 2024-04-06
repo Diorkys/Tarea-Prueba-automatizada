@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using Cap_Entidades;
 
 namespace Cap_Datos
 {
@@ -55,6 +56,56 @@ namespace Cap_Datos
                     command.Parameters.AddWithValue("@Productos", productos);
                     command.Parameters.AddWithValue("@Direccion", direccion);
                     command.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+        public void EliminarProveedor(int idProveedor)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("sp_EliminarProveedor", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@IdProveedor", idProveedor);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error al eliminar el proveedor: {ex.Message}");
+                }
+            }
+        }
+
+
+
+        public void ActualizarProveedor(E_AtributosProveedores proveedor)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("sp_ActualizarProveedor", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@IdProveedor", proveedor.IdProveedor);
+                    command.Parameters.AddWithValue("@Nombre", proveedor.Nombre);
+                    command.Parameters.AddWithValue("@Telefono", proveedor.Telefono);
+                    command.Parameters.AddWithValue("@Productos", proveedor.Productos);
+                    command.Parameters.AddWithValue("@Direccion", proveedor.Direccion);
+                    command.Parameters.AddWithValue("@CorreoElectronico", proveedor.CorreoElectronico);
 
                     command.ExecuteNonQuery();
                 }

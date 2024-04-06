@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cap_Entidades;
 using Cap_Negocio;
+using System.Runtime.InteropServices;
 
 namespace proyecto_inventario
 {
@@ -23,6 +24,9 @@ namespace proyecto_inventario
         public static string area;
 
 
+        public string UsuarioMensaje { get; private set; }
+        public string MensajeError { get; private set; }
+
         void logueo()
         { 
             DataTable dt = new DataTable(); 
@@ -33,7 +37,7 @@ namespace proyecto_inventario
 
             if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Bienvenido " + dt.Rows[0][1].ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bienvenido ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 usuario_nombre = dt.Rows[0][1].ToString();
                 area = dt.Rows[0][0].ToString();
 
@@ -43,9 +47,11 @@ namespace proyecto_inventario
                 form1.ShowDialog();
 
                 if (form1.DialogResult == DialogResult.OK)
+                    
                     Application.Run(new Principal());
                 txtUsuario.Clear();
                 txtContrasenia.Clear();
+
             }
             else
             {
@@ -53,9 +59,17 @@ namespace proyecto_inventario
             }
 
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         public Form1()
         {
             InitializeComponent();
+            // Configurar el TextBox de contraseña
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.UseSystemPasswordChar = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,7 +89,7 @@ namespace proyecto_inventario
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -86,6 +100,54 @@ namespace proyecto_inventario
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Usuario")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "Usuario";
+                txtUsuario.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtContrasenia_Enter(object sender, EventArgs e)
+        {
+            if (txtContrasenia.Text == "Contraseña")
+            {
+                txtContrasenia.Text = "";
+                txtContrasenia.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtContrasenia_Leave(object sender, EventArgs e)
+        {
+            if (txtContrasenia.Text == "")
+            {
+                txtContrasenia.Text = "Contraseña";
+                txtContrasenia.ForeColor = Color.Black;
+            }
         }
     }
 }

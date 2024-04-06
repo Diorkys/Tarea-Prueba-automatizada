@@ -47,6 +47,8 @@
     <Compile Include="D_Proveedores.cs" />
     <Compile Include="D_Users.cs" />
     <Compile Include="D_Ventas.cs" />
+    <Compile Include="IProductosRepository.cs" />
+    <Compile Include="IVentasRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

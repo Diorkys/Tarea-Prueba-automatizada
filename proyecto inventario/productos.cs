@@ -63,7 +63,7 @@ namespace proyecto_inventario
                     PrecioVenta = Convert.ToInt32(txtPrecioVenta.Text),
                     Fecha = txtFecha.Value, // Obtener la fecha del DateTimePicker
                     IdProveedor = Convert.ToInt32(txtProveedor.Text),
-                    Estado = 1 // Puedes establecer el estado según tus necesidades
+                    Estado = 1 
                 };
 
                 datosProductos.Insertar(producto);
@@ -180,6 +180,43 @@ namespace proyecto_inventario
 
             // Enlazar los resultados al DataGridView
             dgvProductos.DataSource = resultados;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productos_Load(object sender, EventArgs e)
+        {
+            if (Form1.area == "A0001")
+            {
+                btnAgregar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                
+
+            }
+
+            else if (Form1.area == "A0002")
+            {
+                btnAgregar.Enabled = true;
+                btnModificar.Enabled = false;
+                btnEliminar.Enabled = false;
+
+            }
+
+            else
+            {
+
+                
+
+            }
         }
     }
 }
