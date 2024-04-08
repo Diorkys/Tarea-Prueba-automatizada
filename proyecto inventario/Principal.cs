@@ -172,14 +172,13 @@ namespace proyecto_inventario
 
             this.Show();
 
-        }
-<<<<<<< HEAD
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
+            // Abrir el formulario de Productos
+            proveedores formProveedor = new proveedores();
+            formProveedor.ShowDialog();
 
+            // Mostrar nuevamente el formulario principal al cerrar el formulario de proveedores
+            this.Show();
         }
-=======
->>>>>>> e1c5fc09e954115ab6e013791bc8701da9dd07b1
     }
 }

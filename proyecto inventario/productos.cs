@@ -63,7 +63,7 @@ namespace proyecto_inventario
                     PrecioVenta = Convert.ToInt32(txtPrecioVenta.Text),
                     Fecha = txtFecha.Value, // Obtener la fecha del DateTimePicker
                     IdProveedor = Convert.ToInt32(txtProveedor.Text),
-                    Estado = 1 // Puedes establecer el estado según tus necesidades
+                    Estado = 1 
                 };
 
                 datosProductos.Insertar(producto);

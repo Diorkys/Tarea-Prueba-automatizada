@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cap_Entidades;
 using System.Configuration;
 using System.Data;
-using Cap_Entidades;
+using System.Data.SqlClient;
 
 namespace Cap_Datos
 {
     public class D_Users
     {
 
-        SqlConnection cn=new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
 
         public DataTable D_User(E_Users obje)
         {
@@ -28,6 +23,6 @@ namespace Cap_Datos
             return dt;
         }
 
-        
+
     }
 }
