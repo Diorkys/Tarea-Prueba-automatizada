@@ -31,8 +31,8 @@ namespace proyecto_inventario
             this.Show();
         }
 
-
-
+        
+        
         private void btnProductos_Click(object sender, EventArgs e)
         {
             // Cerrar el formulario principal
