@@ -7,7 +7,8 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  name: My_agent_pool
+
 
 variables:
   solution: '**/*.sln'
@@ -31,13 +32,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: PublishSymbols@2
-  inputs:
-    SearchPattern: '**/*.pdb'
-    PublishSymbols: false
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'drop'
